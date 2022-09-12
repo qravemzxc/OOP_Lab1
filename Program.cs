@@ -43,7 +43,7 @@ namespace ConsoleApp1
             short var16 = var3;
             short var17 = var3;
             int var18 = var2;
-            int var19 = 100;
+            int var19 =100;
             byte var20 = (byte)(var19 + var8);
             byte var21 = (byte)(var14 + var15);
             sbyte var22 = (sbyte)(var16 + var12);
@@ -72,18 +72,18 @@ namespace ConsoleApp1
             string message2 = "bonjour";
             string message3 = "How are you?";
             Console.WriteLine($"{message1 == message2}");
-
-            Console.WriteLine($"{string.Concat(message1, message2, message3)}-сцепление");
+            
+            Console.WriteLine($"{string.Concat(message1,message2,message3)}-сцепление");
             Console.WriteLine($"{string.Copy(message3)}-копирование");
             Console.WriteLine($"{message3.Substring(0, 7)}-выделение подстроки");
-            string[] words = message3.Split(' ');
+            string[] words=message3.Split(' ');
             foreach (var word in words)
             {
                 Console.Write(words);
             }
-            Console.WriteLine($"\n{message1.Insert(0, "everybody")}-вставка");
+            Console.WriteLine($"\n{message1.Insert(0,"everybody")}-вставка");
             Console.WriteLine($"{message3.Remove(0, 3)}-удаление");
-
+      
 
             string str1 = null;
             string str2 = string.Empty;
@@ -96,8 +96,76 @@ namespace ConsoleApp1
             sb.Insert(0, "!");
             sb.AppendFormat("?");
             sb.Remove(1, 3);
-            sb.Remove(2, 4);
+            sb.Remove(2, 4);    
             Console.WriteLine(sb);
+
+
+            int[,] numbers = { { 1, 2, 3 }, { 4, 5, 6 } };
+            int rows = numbers.GetUpperBound(0) + 1;
+            int columns = numbers.GetUpperBound(1)+1;
+            for(int i=0; i < rows; i++)
+            {
+                for(int j=0; j < columns; j++)
+                {
+                    Console.Write($"{numbers[i, j]}\t");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+
+
+            string[] mas = { "Sunday", "Monday", "Tuersday","Wednesday", "Thirsday", "Friday", "Saturday" };
+            for(int i=0; i < mas.Length; i++)
+            {
+                Console.Write($"{mas[i]}\t");
+            }
+            Console.WriteLine();
+            Console.WriteLine($"Длина массива:{mas.Length}\n");
+            Console.Write("Введите позицию:");
+            int userPos =int.Parse(Console.ReadLine());
+            Console.Write("Введите значение элемента:");
+            int userInt = int.Parse(Console.ReadLine());
+            string tmp = mas[userPos];
+            mas[userPos] = mas[userInt];
+            mas[userInt] = tmp;
+            for (int i=0; i < mas.Length; i++)
+            {
+                Console.Write($"{mas[i]}\t");
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+            float[][] jaggArr=new float[3][];
+            jaggArr[0] = new float[2];
+            jaggArr[1] = new float[3];
+            jaggArr[2] = new float[4];
+            for (int i = 0; i < 2; i++)
+            {
+                jaggArr[0][i]= i;
+                Console.Write($"{jaggArr[0][i]}\t");
+            }
+            Console.WriteLine();
+            for (int i = 0; i < 3; i++)
+            {
+                jaggArr[1][i] = i;
+                Console.Write($"{jaggArr[1][i]}\t");
+            }
+            Console.WriteLine();
+            for (int i = 0; i < 4; i++)
+            {
+                jaggArr[2][i] = i;
+                Console.Write($"{jaggArr[2][i]}\t");
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+            var Arr=new object[0];
+            var Str = " ";
+
+
+            
 
 
         }
