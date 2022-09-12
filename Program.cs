@@ -165,7 +165,31 @@ namespace ConsoleApp1
             var Str = " ";
 
 
-            
+            (int , string , char , string , ulong ) tuple = (1, "hello", 'a', "world", 10000);
+            Console.WriteLine(tuple);
+            Console.WriteLine(tuple.Item1);
+            Console.WriteLine(tuple.Item3);
+            Console.WriteLine(tuple.Item4);
+
+
+            Console.WriteLine("\n" + "Распаковка кортежа");
+            var (a_1, b_1, c_1, d_1, e_1) = tuple;
+            Console.WriteLine(a_1);
+            Console.WriteLine(b_1);
+            Console.WriteLine(c_1);
+            Console.WriteLine(d_1);
+            Console.WriteLine(e_1);
+            Console.WriteLine("\n" + "Использование переменной(_)");
+            var (f_1, _, _, j_1, _) = tuple;
+            Console.WriteLine(f_1);
+            Console.WriteLine(j_1);
+
+
+            var firstTuple=Tuple.Create(3,9);
+            var secondTuple = Tuple.Create(9, 3);
+            Console.WriteLine(firstTuple==secondTuple);
+
+           
 
 
         }
