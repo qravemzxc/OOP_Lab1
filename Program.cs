@@ -189,7 +189,40 @@ namespace ConsoleApp1
             var secondTuple = Tuple.Create(9, 3);
             Console.WriteLine(firstTuple==secondTuple);
 
-           
+            string strVar = "qweqwe";
+            int[] arrVar = { 1, 2, 3 };
+            (int,int,int,char) func(int[]arVar,string stVar)
+            {
+                int maxArrElement = arVar.Max();
+                int minArrElement = arVar.Min();
+                int sumArrElement = arVar.Sum();
+                char firstLetter = stVar[0];
+                return (maxArrElement, minArrElement, sumArrElement,firstLetter);
+            }
+            func(arrVar, strVar);
+
+
+            void CheckedFunc()
+            {
+                checked
+                {
+                    int Max = int.MaxValue;
+                    Console.WriteLine(Max);
+                }
+            }
+
+
+            void Unchecked()
+            {
+                unchecked
+                {
+                    int Max = int.MaxValue;
+                    Console.WriteLine(Max);
+                }
+            }
+            CheckedFunc();
+            Unchecked();
+            Console.ReadKey();
 
 
         }
