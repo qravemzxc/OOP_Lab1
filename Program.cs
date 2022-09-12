@@ -68,6 +68,38 @@ namespace ConsoleApp1
             chek = 400;*/
 
 
+            string message1 = "hello";
+            string message2 = "bonjour";
+            string message3 = "How are you?";
+            Console.WriteLine($"{message1 == message2}");
+
+            Console.WriteLine($"{string.Concat(message1, message2, message3)}-сцепление");
+            Console.WriteLine($"{string.Copy(message3)}-копирование");
+            Console.WriteLine($"{message3.Substring(0, 7)}-выделение подстроки");
+            string[] words = message3.Split(' ');
+            foreach (var word in words)
+            {
+                Console.Write(words);
+            }
+            Console.WriteLine($"\n{message1.Insert(0, "everybody")}-вставка");
+            Console.WriteLine($"{message3.Remove(0, 3)}-удаление");
+
+
+            string str1 = null;
+            string str2 = string.Empty;
+            Console.WriteLine(string.IsNullOrEmpty(str1));
+            Console.WriteLine(string.IsNullOrEmpty(str2));
+
+
+            StringBuilder sb = new StringBuilder("How are you");
+            Console.WriteLine(sb);
+            sb.Insert(0, "!");
+            sb.AppendFormat("?");
+            sb.Remove(1, 3);
+            sb.Remove(2, 4);
+            Console.WriteLine(sb);
+
+
         }
     }
 }
